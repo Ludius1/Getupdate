@@ -1,0 +1,88 @@
+.blog__section, .blog__newsletter {  
+    padding: 10px 60px;
+    margin-top: 100px; 
+}
+.blog__newsletter {  
+   
+    margin: 100px 0; 
+}
+.blog {
+    display: grid;
+    grid-template-columns: 1fr 20%;
+    gap: 50px;
+}
+.down__blog {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.blog__read {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 50px;
+}
+.blog__categories {
+    padding: 6px 12px;
+    color: white;
+    background-color: #E76F51;
+    font-size: 13px;
+}
+.author {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.author span {
+    font-weight: 400;
+    font-size: 14px;
+}
+.author small {
+    font-weight: 400;
+    font-size: 12px;
+    color: #949596;
+}
+.social__blog {
+    display: flex;
+    gap: 20px;
+}
+.social__blog span {
+    font-size: 20px;
+}
+.home__left h2 {
+    font-family: Work Sans;
+    letter-spacing: -2px;
+    font-size: 32px;
+}
+.home__left__section {
+    padding: 0;
+}
+.news__title {
+    padding-bottom: 20px;
+}
+.nes__blog__ {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: #949596;
+    font-weight: 300;
+    gap: 20px;
+}
+
+.newsdiv {
+    display: flex;
+    height: 500px;
+}
+.newsletter {
+    
+}
+.left__left_newsletter {
+    padding: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.news__date {
+    cursor: pointer;
+}
