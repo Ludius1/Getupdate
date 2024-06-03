@@ -17,12 +17,12 @@ const Blog = () => {
     const [news, setNews] = useState(null)
     const [trendingNews, settrendingNews] = useState(null)
 
-    const apikey = "?q=keyword&apiKey=b3565ca4ae66436c963b1fc3b237c57e"
+    const apikey = "&apiKey=b3565ca4ae66436c963b1fc3b237c57e"
 
     const showNews = async () => {
         try {
             const newsData = await axios.get(
-                `https://newsapi.org/v2/everything${apikey}`)
+                `https://newsapi.org/v2/top-headlines?sources=bbc-news${apikey}`)
             console.log(newsData)
             setNews(newsData.data.articles)
         }
@@ -103,7 +103,7 @@ const Blog = () => {
                         <div className="home__left__section">
                             {trendingNews?.slice(4, 9).map((trend, index) => (
 
-                                <div key={index} className="home__left__news" >
+                                <div key={index} className="home__left__news">
 
                                     <div className="left__news__details">
 

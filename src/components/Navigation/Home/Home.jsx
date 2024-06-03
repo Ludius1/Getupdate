@@ -6,6 +6,7 @@ import { RiArrowRightUpLine } from "react-icons/ri";
 import './home.css'
 import Navbar from '../../Navbar/Navbar';
 import Original from '../../original/Original';
+import { Link } from 'react-router-dom';
 import Footer from '../../footer/Footer';
 import Newsletter from '../../Newsletter';
 import './../../original/original.css'
@@ -13,12 +14,12 @@ import './../../original/original.css'
 const Home = () => {
     const [news, setNews] = useState(null)
 
-    const apikey = "?q=keyword&apiKey=b3565ca4ae66436c963b1fc3b237c57e"
+    const apikey = "&apiKey=b3565ca4ae66436c963b1fc3b237c57e"
 
     const showNews = async () => {
         try{
             const newsData = await axios.get(
-                `https://newsapi.org/v2/everything${apikey}`)
+                `https://newsapi.org/v2/top-headlines?sources=bbc-news${apikey}`)
             console.log(newsData)
             setNews(newsData.data.articles)
             console.log(setNews)
@@ -80,7 +81,7 @@ const Home = () => {
                                 <h1>{news?.title}</h1>
 
                                 <div className="read">
-                                        <h4>Read full story</h4>
+                                <Link to="/blog"><h4>Read full story</h4></Link>
                                         <span><RiArrowRightUpLine /></span>
                                 </div>
 
@@ -91,7 +92,7 @@ const Home = () => {
                         {news?.slice(0, 1).map((news)=>(  
                             <div className="home__image_secton">
                             <img src={news?.urlToImage} alt="" className="home__img" />
-                            <button className="home__one">Black Owned Business</button>
+                            <button className="home__one">{news?.author}</button>
                     </div>
 
                         ))}
@@ -100,7 +101,7 @@ const Home = () => {
                             
                             <div className="other__home__img">
 
-                            {news?.slice(1, 5).map((news)=>(  
+                            {news?.slice(1, 6).map((news)=>(  
                                 <div className="inside__other__home">
                                 <img src={news?.urlToImage} alt="" />
                                 <div className="news__title">

@@ -11,7 +11,7 @@ const Original = () => {
 
     const showNews = async () => {
         try{
-            const newsData = await axios.get('https://newsapi.org/v2/everything?q=keyword&apiKey=b3565ca4ae66436c963b1fc3b237c57e')
+            const newsData = await axios.get('https://newsapi.org/v2/everything?q=apple&from=2024-06-02&to=2024-06-02&sortBy=popularity&apiKey=b3565ca4ae66436c963b1fc3b237c57e')
             console.log(newsData)
             setNews(newsData.data.articles)
             console.log(setNews)
