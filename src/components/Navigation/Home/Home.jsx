@@ -2,7 +2,6 @@ import News from './../../../assets/news.jpg'
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import axios from 'axios';
-import { RiArrowRightUpLine } from "react-icons/ri";
 import './home.css'
 import Navbar from '../../Navbar/Navbar';
 import Original from '../../original/Original';
@@ -10,6 +9,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../../footer/Footer';
 import Newsletter from '../../Newsletter';
 import './../../original/original.css'
+// import { RiArrowRightUpLine } from 'react-icons/ri';
 // import Newsletter from '../../newsletter';
 
 const Home = () => {
@@ -83,7 +83,7 @@ const Home = () => {
 
                                 <div className="read">
                                 <Link to="/blog"><h4>Read full story</h4></Link>
-                                        <span><RiArrowRightUpLine /></span>
+                                        {/* <span><RiArrowRightUpLine /></span> */}
                                 </div>
 
                                 </div>
@@ -129,7 +129,7 @@ const Home = () => {
 
                                 <div className="read">
                                     <h4>Read full story</h4>
-                                    <span><RiArrowRightUpLine /></span>
+                                    {/* <span><RiArrowRightUpLine /></span> */}
                             </div>
                             </div>
 
