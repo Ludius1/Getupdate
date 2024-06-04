@@ -82,9 +82,7 @@ input::placeholder {
 .cancel {
     display: none;
 }
-/* .middle__nav {
-    display: flex;
-} */
+
 
 
 @media screen and (max-width: 600px) {
@@ -95,7 +93,6 @@ input::placeholder {
         padding: 0 20px;
     }
     .middle__nav {
-        display: none;
         flex-direction: row;
         align-items: baseline;
         position: absolute;
@@ -107,6 +104,13 @@ input::placeholder {
         height: 1000vh;
         background-color: #5B7D7B;
     }
+    .open__nav {
+        display: flex;
+    }
+    .close__nav {
+        display: none;
+    }
+   
     
     .left__link {
         display: flex;
@@ -123,7 +127,7 @@ input::placeholder {
         font-family: "Unbounded", sans-serif;     
     }
     .right__link {
-        display: block;
+        display: none;
     }
     .left__nav {
         display: flex;
@@ -152,12 +156,12 @@ input::placeholder {
     .nav__right__link {
         display: block;
     }
-    .menu {
+    .menu, .exit {
         font-size: 25px;
         cursor: pointer;
     }
     .right__link  {
-        border: 1px solid  #e4e4e4;
+        border: 1px solid #e4e4e4;
         padding: 5px;
     }
     .right__link input {

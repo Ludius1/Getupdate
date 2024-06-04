@@ -101,13 +101,13 @@ const Home = () => {
                             
                             <div className="other__home__img">
 
-                            {news?.slice(1, 6).map((news)=>(  
+                            {news?.slice(1, 5).map((news)=>(  
                                 <div className="inside__other__home">
                                 <img src={news?.urlToImage} alt="" />
                                 <div className="news__title">
                                 {news?.title}
                                 </div>
-                                <span className="categories">Culture / Politics</span>
+                                <span className="categories">{news?.author}</span>
                                 <h4 className="news__date">{news?.publishedAt}</h4>
                             </div>
                             ))}

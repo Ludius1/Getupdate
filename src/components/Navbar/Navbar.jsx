@@ -9,11 +9,9 @@ import { MdCancel } from "react-icons/md";
 
 
 const Navbar = () => {
-  const [openMenu, setopenMenu] = useState(true)
+  const [isNavshowing, setisNavshowing] = useState(false)
 
-  // const changeMenu = () => {
-  //     setopenMenu((prev=>!prev))
-  // }
+
   return (
     <div>
 
@@ -28,12 +26,11 @@ const Navbar = () => {
                                 <span><CiSearch /></span>
                         </ul>
 
-                        <span className="menu"><IoMdMenu onClick={()=>setopenMenu(true)}/></span>
+                        <span className="menu" onClick={() => setisNavshowing(!isNavshowing)}><IoMdMenu/></span>
                     </span>
                 </div>
-              {
-                openMenu?
-                <div className="middle__nav">
+             
+                <div className={`middle__nav ${isNavshowing ? "open__nav" : "close__nav" }`} >
                 <ul className='left__link'>
                     <div className="entertaiment">
                       <a href="">ENTERTAINMENT</a>
@@ -48,12 +45,12 @@ const Navbar = () => {
   
                     <div className="entertaiment">
                         <Link to="/">NEW UPDATE</Link>
-                        <span><IoMdArrowDropdown /></span>
+                        <span><IoMdArrowDropdown  /></span>
                     </div>
                 </ul>
   
                 <div className="cancel">
-                <small><MdCancel onClick={()=>setopenMenu(false)}  /></small>
+                <small className='exit' ><MdCancel onClick={() => setisNavshowing(!isNavshowing)} /></small>
                 </div>
   
                 <ul className='right__link'>
@@ -61,8 +58,7 @@ const Navbar = () => {
                         <span><CiSearch /></span>
                         
                 </ul>
-            </div> :null
-              }
+            </div> 
           
            
         </div>
