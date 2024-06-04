@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../../footer/Footer';
 import Newsletter from '../../Newsletter';
 import './../../original/original.css'
+// import Newsletter from '../../newsletter';
 
 const Home = () => {
     const [news, setNews] = useState(null)
