@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../../footer/Footer';
 import Newsletter from '../../Newsletter';
 import './../../original/original.css'
-// import { RiArrowRightUpLine } from 'react-icons/ri';
+import { RiArrowRightUpLine } from 'react-icons/ri';
 // import Newsletter from '../../newsletter';
 
 const Home = () => {
@@ -83,7 +83,7 @@ const Home = () => {
 
                                 <div className="read">
                                 <Link to="/blog"><h4>Read full story</h4></Link>
-                                        {/* <span><RiArrowRightUpLine /></span> */}
+                                        <span><RiArrowRightUpLine /></span>
                                 </div>
 
                                 </div>
@@ -129,7 +129,7 @@ const Home = () => {
 
                                 <div className="read">
                                     <h4>Read full story</h4>
-                                    {/* <span><RiArrowRightUpLine /></span> */}
+                                    <span><RiArrowRightUpLine /></span>
                             </div>
                             </div>
 
