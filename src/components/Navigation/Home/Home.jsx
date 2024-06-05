@@ -15,14 +15,14 @@ import { RiArrowRightUpLine } from 'react-icons/ri';
 const Home = () => {
     const [news, setNews] = useState(null)
 
-    const apikey = "&apiKey=b3565ca4ae66436c963b1fc3b237c57e"
+    const apikey = "?apikey=pub_45704f598f48d3d535a61c582482596254cb9"
 
     const showNews = async () => {
         try{
             const newsData = await axios.get(
-                `https://newsapi.org/v2/top-headlines?sources=bbc-news${apikey}`)
+                `https://newsdata.io/api/1/latest${apikey}`)
             console.log(newsData)
-            setNews(newsData.data.articles)
+            setNews(newsData.data.results)
             console.log(setNews)
         }   
         catch(error) {
@@ -59,16 +59,16 @@ const Home = () => {
                             <h2>Trending <br />now🔥</h2>
 
                             <div className="home__left__section">
-                                    {news?.slice(5, 15).map((news)=>(
+                                    {news?.slice(1, 15).map((news)=>(
 
                                     <div className="home__left__news" key={news.id}>
-                                    <img src={news?.urlToImage} alt="" />
+                                    <img src={news?.image_url} alt="" />
                                     <div className="left__news__details">
                                         <div className="news__title">
                                             {news?.title}
                                         </div>
 
-                                        <span className="news__date">{news?.publishedAt}</span>
+                                        <span className="news__date">{news?.pubDate}</span>
                                     </div>
                                     </div>
                                     ))}
@@ -92,8 +92,8 @@ const Home = () => {
 
                         {news?.slice(0, 1).map((news)=>(  
                             <div className="home__image_secton">
-                            <img src={news?.urlToImage} alt="" className="home__img" />
-                            <button className="home__one">{news?.author}</button>
+                            <img src={news?.image_url} alt="" className="home__img" />
+                            <button className="home__one">{news?.creator}</button>
                     </div>
 
                         ))}
@@ -104,12 +104,12 @@ const Home = () => {
 
                             {news?.slice(1, 5).map((news)=>(  
                                 <div className="inside__other__home">
-                                <img src={news?.urlToImage} alt="" />
+                                <img src={news?.image_url} alt="" />
                                 <div className="news__title">
                                 {news?.title}
                                 </div>
-                                <span className="categories">{news?.author}</span>
-                                <h4 className="news__date">{news?.publishedAt}</h4>
+                                <span className="categories">{news?.category}</span>
+                                <h4 className="news__date">{news?.pubDate}</h4>
                             </div>
                             ))}
                                 
@@ -121,7 +121,7 @@ const Home = () => {
                                 <span className="desktop__side">
                                 {news?.slice(6, 7).map((news)=>(  
                                 <div className="other__home__img__">
-                                <img src={news?.urlToImage} alt="" className='img__left__home' />
+                                <img src={news?.image_url} alt="" className='img__left__home' />
                                 <div className="news__title__home">
                                 {news?.title}
                                 </div>

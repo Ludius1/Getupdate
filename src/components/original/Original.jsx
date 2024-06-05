@@ -6,15 +6,15 @@ import axios from 'axios';
 
 
 const Original = () => {
-    const [news, setNews] = useState(null)
+    const [originalNews, setoriginalNews] = useState(null)
 
 
-    const showNews = async () => {
+    const showOriginalNews = async () => {
         try{
-            const newsData = await axios.get('https://newsapi.org/v2/everything?q=apple&from=2024-06-02&to=2024-06-02&sortBy=popularity&apiKey=b3565ca4ae66436c963b1fc3b237c57e')
-            console.log(newsData)
-            setNews(newsData.data.articles)
-            console.log(setNews)
+            const newsOriginal = await axios.get('https://newsdata.io/api/1/latest?apikey=pub_45704f598f48d3d535a61c582482596254cb9')
+            console.log(newsOriginal)
+            setoriginalNews(newsOriginal.data.results)
+            console.log(setoriginalNews)
         }   
         catch(error) {
             console.log(error)
@@ -23,7 +23,7 @@ const Original = () => {
 
 
     useEffect(() => {
-        showNews();
+        showOriginalNews();
     }, [])
   return (
     <div className="original__section">
@@ -40,15 +40,15 @@ const Original = () => {
                 </div>
 
                 <div className="head--ent">
-                {news?.slice(17, 21).map((news)=>(  
+                {originalNews?.slice(17, 21).map((originalNews)=>(  
                                 <div className="entertaiment__sect">
                                 <div className="original__inside">
-                            <img src={news?.urlToImage} alt="" className='img__original' />
+                            <img src={originalNews?.image_url} alt="" className='img__original' />
                                 <div className="news__title__home">
-                                {news?.title}
+                                {originalNews?.title}
                                 </div>
                                 <span className="coriginal__categories">Entertaiments</span>
-                                <h4 className="news__date">{news?.publishedAt}</h4>
+                                <h4 className="news__date">{originalNews?.pubDate}</h4>
                         </div>
                         </div>  
 
