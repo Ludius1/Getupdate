@@ -7,27 +7,27 @@ import './../components/Navigation/Home/home.css'
 
 const Newsletter = () => {
 
-    const [news, setNews] = useState(null)
+    // const [news, setNews] = useState(null)
 
-    const apikey = "?q=keyword&apiKey=b3565ca4ae66436c963b1fc3b237c57e"
+    // const apikey = "?q=keyword&apiKey=b3565ca4ae66436c963b1fc3b237c57e"
 
-    const showNews = async () => {
-        try {
-            const newsData = await axios.get(
-                `https://newsapi.org/v2/everything${apikey}`)
-            console.log(newsData)
-            setNews(newsData.data.articles)
-            console.log(setNews)
-        }
-        catch (error) {
-            console.log(error)
-        }
-    }
+    // const showNews = async () => {
+    //     try {
+    //         const newsData = await axios.get(
+    //             `https://newsapi.org/v2/everything${apikey}`)
+    //         console.log(newsData)
+    //         setNews(newsData.data.articles)
+    //         console.log(setNews)
+    //     }
+    //     catch (error) {
+    //         console.log(error)
+    //     }
+    // }
 
 
-    useEffect(() => {
-        showNews();
-    }, [])
+    // useEffect(() => {
+    //     showNews();
+    // }, [])
 
     return (
         <div>
@@ -35,8 +35,10 @@ const Newsletter = () => {
             <div className="Newletter__ ">
 
                 <div className="newsletter ">
-                    <h1>GET RELEVANT CONTENT DELIVERED TO YOU ONCE A WEEK</h1>
+                   <div className="top__newslett">
+                   <h1>GET RELEVANT CONTENT DELIVERED TO YOU ONCE A WEEK</h1>
                     <small>Ready to dive in? Select your preferences and get ready for an experience tailored just for you!</small>
+                   </div>
 
                     <div className="btn__newsletter">
                         <button className="news__btn">Apparel & Fashion</button>

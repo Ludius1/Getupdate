@@ -40,14 +40,14 @@ const Original = () => {
                 </div>
 
                 <div className="head--ent">
-                {originalNews?.slice(17, 21).map((originalNews)=>(  
+                {originalNews?.slice(5, 21).map((originalNews)=>(  
                                 <div className="entertaiment__sect">
                                 <div className="original__inside">
                             <img src={originalNews?.image_url} alt="" className='img__original' />
                                 <div className="news__title__home">
                                 {originalNews?.title}
                                 </div>
-                                <span className="coriginal__categories">Entertaiments</span>
+                                <span className="coriginal__categories">{originalNews?.category}</span>
                                 <h4 className="news__date">{originalNews?.pubDate}</h4>
                         </div>
                         </div>  

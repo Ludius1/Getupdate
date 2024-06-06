@@ -74,7 +74,7 @@ input::placeholder {
     font-weight: 800;
     font-size: 28px;
     color: #012401;
-    font-family: poppins;
+    font-family: "Unbounded", sans-serif;
 }
 .nav__right__link {
     display: none;
@@ -165,7 +165,7 @@ input::placeholder {
         padding: 5px;
     }
     .right__link input {
-        width: 150px;
+        width: 100px;
         border: none;
         outline: none;
         background: transparent;

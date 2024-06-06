@@ -21,7 +21,7 @@
     color: white;
     
 }
-.first__send {
+.footer__first__send {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

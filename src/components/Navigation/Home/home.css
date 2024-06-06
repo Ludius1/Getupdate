@@ -187,8 +187,7 @@
 .first__send {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
+    
 }
 .first__send input {
     background: none;
@@ -268,7 +267,7 @@
         /* flex-direction: row; */
         flex-direction: column-reverse;
         gap: 50px;
-        padding: 0 10px;
+        padding: 15px 10px;
         margin-top: 70px;
     }
     .home__left__head {
@@ -304,24 +303,25 @@
         display: grid;
         grid-template-columns: 1fr;
         justify-content: space-between;
-        gap: 60px;
-        padding: 0;
+       
     }
     .newsletter__section {
-        background-color: rgb(0, 0, 0);
+        
         
     }
     .newsletter  {
-        padding: 20px;
-        background-color: rgb(0, 0, 0);
-        gap: 20px;
         display: flex;
         flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+        /* display: flex;
+        flex-direction: column; */
     }
     
     .newsletter h1 {
         font-size: 35px;
         line-height: 35px;
+        padding: 0;
     }
     .newsletter small {
         color: white;
@@ -329,32 +329,40 @@
     }
     .btn__newsletter {
         margin-top: 25px;
-        padding-right: 50px;
+        padding: 0px;
     }
     .news__btn {
         padding: 8px;
         margin: 3px;
     }
     .mobile__newsletter {
-        display: block;
+        display: flex;
         padding: 0;
-        margin-top: 50px;
+        margin-top: 0px;
     }
     .first__send {
-        display: grid;
-        grid-template-columns: 1fr;
+        /* display: grid;
+        grid-template-columns: 1fr; */
         display: flex;
         flex-direction: column;
+        gap: 10px;
         /* background-color: #E8F887; */
     }
- 
+    .send {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
     .first__send input {
         background: none;
         border: none;
-      
+        width: 100%;
         border-bottom: 1px solid #E8F887;;
         outline: none;
         color: white;
+    }
+    .send__email {
+        
     }
     .desktop__side {
         display: none;
