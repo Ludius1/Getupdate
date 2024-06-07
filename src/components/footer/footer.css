@@ -1,6 +1,6 @@
 .footer__container {
     background-color: black;
-    padding: 80px 40px;
+    padding: 80px 20px;
 }
 .footer {
     border-top: 1px solid rgb(37, 37, 37);
@@ -23,7 +23,7 @@
 }
 .footer__first__send {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: baseline;
 }

@@ -8,12 +8,16 @@ import Original from '../../original/Original';
 import { Link } from 'react-router-dom';
 import Footer from '../../footer/Footer';
 import Newsletter from '../../Newsletter';
+import { Navigate } from 'react-router-dom';
 import './../../original/original.css'
 import { RiArrowRightUpLine } from 'react-icons/ri';
 // import Newsletter from '../../newsletter';
+// import ClipLoader from "react-spinners/ClipLoader";
+
 
 const Home = () => {
     const [news, setNews] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     const apikey = "?apikey=pub_45704f598f48d3d535a61c582482596254cb9"
 
@@ -34,6 +38,10 @@ const Home = () => {
     useEffect(() => {
         showNews();
         newNews()
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 5000)
     }, [])
     const newapikey = "c2aaf33ff9msh3da29005fb8ac47p144509jsna438256234d8"
     
@@ -53,7 +61,9 @@ const Home = () => {
     <>
         <div className="home__sect">
             <Navbar/>
-            <div className='Home'>
+  
+             <div className='Home'>
+
             
                         <div className="home__left">
                             <h2>Trending <br />now🔥</h2>
@@ -62,10 +72,10 @@ const Home = () => {
                                     {news?.slice(1, 15).map((news)=>(
 
                                     <div className="home__left__news" key={news.id}>
-                                    <img src={news?.image_url} alt="" />
+                                    <img src={news?.image_url && news.image_url !== 'N/A' ? news.image_url : 'https://via.placeholder.com/400'}alt="" />
                                     <div className="left__news__details">
                                         <div className="news__title">
-                                            {news?.title}
+                                            {news?.title} 
                                         </div>
 
                                         <span className="news__date">{news?.pubDate}</span>
@@ -91,8 +101,8 @@ const Home = () => {
                         ))}
 
                         {news?.slice(0, 1).map((news)=>(  
-                            <div className="home__image_secton">
-                            <img src={news?.image_url} alt="" className="home__img" />
+                            <div className="home__image_secton" onClick={() => Navigate(`blog`) }>
+                            <img src={news?.image_url && news.image_url !== 'N/A' ? news.image_url : 'https://via.placeholder.com/400'} alt="" className="home__img" />
                             <button className="home__one">{news?.creator}</button>
                     </div>
 
@@ -104,7 +114,7 @@ const Home = () => {
 
                             {news?.slice(1, 5).map((news)=>(  
                                 <div className="inside__other__home">
-                                <img src={news?.image_url} alt="" />
+                                <img src={news?.image_url && news.image_url !== 'N/A' ? news.image_url : 'https://via.placeholder.com/400'} alt="" />
                                 <div className="news__title">
                                 {news?.title}
                                 </div>
@@ -121,7 +131,7 @@ const Home = () => {
                                 <span className="desktop__side">
                                 {news?.slice(6, 7).map((news)=>(  
                                 <div className="other__home__img__">
-                                <img src={news?.image_url} alt="" className='img__left__home' />
+                                <img src={news?.image_url && news.image_url !== 'N/A' ? news.image_url : 'https://via.placeholder.com/400'} alt="" className='img__left__home' />
                                 <div className="news__title__home">
                                 {news?.title}
                                 </div>
@@ -141,6 +151,7 @@ const Home = () => {
                             
                     </div>
             </div>
+                         
             <span className='mobile__newsletter'><Newsletter/></span>
             <Original/>
             <Footer/>

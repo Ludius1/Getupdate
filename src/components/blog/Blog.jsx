@@ -11,9 +11,11 @@ import { FaFacebook } from "react-icons/fa6";
 import './blog.css'
 import './../Navigation/Home/home.css'
 import Banner from './../../assets/subscribe-banner.png'
+import { useParams,  Link } from 'react-router-dom';
+
 
 const Blog = () => {
-
+    
     const [news, setNews] = useState(null)
     const [trendingNews, settrendingNews] = useState(null)
 
@@ -64,11 +66,11 @@ const Blog = () => {
                                 <h1>{news?.title}</h1>
 
                                 <div className="blog__read">
-                                    <div className="blog__categories">Entertaiment</div>
+                                    <div className="blog__categories">{news?.author}</div>
 
                                     <div className="author">
-                                        <span>Kui Mwai</span>
-                                        <small>May 28, 2024</small>
+                                        <span>{news?.source.id}</span>
+                                        <small>{news?.publishedAt}</small>
                                     </div>
 
                                     <div className="social__blog">

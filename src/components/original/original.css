@@ -39,13 +39,14 @@
     width: 100%;
 }
 .original__inside {
-    width: 300px;
+    width: 350px;
     border-bottom: 1px solid rgb(207, 207, 207);
 }
 .img__original  {
-    width: 300px;
-    height:200px;
+    width: 350px;
+    height:250px;
     object-fit: cover;
+    padding-bottom: 10px;
 }
 .coriginal__categories {
     font-size: 12px;
@@ -93,7 +94,7 @@
         object-fit: cover;
     }
     .original__inside {
-        width: 350px;
+        width: 100%;
     }
 
 

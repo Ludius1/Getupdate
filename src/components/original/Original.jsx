@@ -40,10 +40,11 @@ const Original = () => {
                 </div>
 
                 <div className="head--ent">
-                {originalNews?.slice(5, 21).map((originalNews)=>(  
+                {originalNews?.slice(5, 9).map((originalNews)=>(  
                                 <div className="entertaiment__sect">
                                 <div className="original__inside">
-                            <img src={originalNews?.image_url} alt="" className='img__original' />
+                                    
+                            <img src={originalNews?.image_url && originalNews.image_url !== 'N/A' ? originalNews.image_url : 'https://via.placeholder.com/400'} className='img__original' />
                                 <div className="news__title__home">
                                 {originalNews?.title}
                                 </div>
